@@ -5,4 +5,4 @@ RUN apk --update add \
 	curl wget perl python git bash zsh vim jq
 RUN curl -sSL dot.ciel.im | bash
 
-ENTRYPOINT ["zsh"]
+CMD ["zsh"]
