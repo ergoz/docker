@@ -11,7 +11,7 @@ config = {
     // When running Ghost in the wild, use the production environment.
     // Configure your URL and mail settings here
     production: {
-        url: process.env.URL | 'http://localhost',
+        url: process.env.URL || 'http://localhost',
         fileStorage: false,
         mail: {},
         database: {
@@ -23,8 +23,8 @@ config = {
         },
 
         server: {
-            host: process.env.HOST | '0.0.0.0',
-            port: process.env.PORT | '2368'
+            host: process.env.HOST || '0.0.0.0',
+            port: process.env.PORT || '2368'
         }
     },
 
