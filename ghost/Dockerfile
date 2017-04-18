@@ -7,11 +7,12 @@ ENV NODE_ENV production
 
 RUN apk --update add alpine-sdk
 RUN curl -sSL -o /tmp/ghost.zip https://github.com/TryGhost/Ghost/releases/download/${GHOST_VERSION}/Ghost-${GHOST_VERSION}.zip
+RUN curl -sSL -o /tmp/casper-sans.zip https://github.com/imwithye/casper-sans/archive/master.zip
 
 WORKDIR $GHOST
 RUN unzip /tmp/ghost.zip && rm /tmp/ghost.zip
+RUN unzip /tmp/casper-sans.zip -d ${GHOST}/content/themes
 RUN npm i --production
 
 EXPOSE 2368
-
-ENTRYPOINT node index.js
+CMD ["node", "index.js"]
