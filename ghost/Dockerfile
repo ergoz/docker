@@ -13,6 +13,7 @@ WORKDIR $GHOST
 RUN unzip /tmp/ghost.zip && rm /tmp/ghost.zip
 RUN unzip /tmp/casper-sans.zip -d ${GHOST}/content/themes
 RUN npm i --production
+ADD config.js $GHOST
 
 EXPOSE 2368
 CMD ["node", "index.js"]
