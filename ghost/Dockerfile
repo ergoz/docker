@@ -1,7 +1,7 @@
 FROM node:boron-alpine
 MAINTAINER Ciel <me@ciel.xin>
 
-ENV GHOST_VERSION 0.11.7
+ENV GHOST_VERSION 0.11.8
 ENV GHOST /var/ghost
 ENV NODE_ENV production
 
