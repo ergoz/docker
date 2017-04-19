@@ -16,4 +16,5 @@ RUN npm i --production
 ADD config.js $GHOST
 
 EXPOSE 2368
+VOLUME ${GHOST}/content/data
 CMD ["node", "index.js"]
