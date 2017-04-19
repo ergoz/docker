@@ -11,7 +11,7 @@ RUN curl -sSL -o /tmp/casper-sans.zip https://github.com/imwithye/casper-sans/ar
 
 WORKDIR $GHOST
 RUN unzip /tmp/ghost.zip && rm /tmp/ghost.zip
-RUN unzip /tmp/casper-sans.zip -d ${GHOST}/content/themes
+RUN unzip /tmp/casper-sans.zip -d ${GHOST}/content/themes && rm /tmp/casper-sans.zip
 RUN npm i --production
 ADD config.js $GHOST
 
