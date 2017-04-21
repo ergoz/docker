@@ -12,4 +12,4 @@ RUN echo "Hello Caddy!" > $CADDY/index.html
 
 EXPOSE 80
 EXPOSE 443
-CMD ["caddy", "-agree=true", "-port=80"]
+CMD ["caddy", "-agree=true"]
