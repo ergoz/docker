@@ -11,4 +11,5 @@ RUN echo "0.0.0.0:80" > $CADDY/Caddyfile
 RUN echo "Hello Caddy!" > $CADDY/index.html
 
 EXPOSE 80
+EXPOSE 443
 CMD ["caddy", "-agree=true", "-port=80"]
