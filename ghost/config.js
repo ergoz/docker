@@ -13,7 +13,16 @@ config = {
     production: {
         url: process.env.URL || 'http://localhost',
         fileStorage: false,
-        mail: {},
+        mail: {
+            transport: 'SMTP',
+            options: {
+                service: 'Mailgun',
+                auth: {
+                    user: process.env.MAILGUN_SMTP_LOGIN || '',
+                    pass: process.env.MAILGUN_SMTP_PASSWORD || ''
+                }
+            }
+        },
         database: {
             client: 'sqlite3',
             connection: {
